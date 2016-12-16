@@ -22,7 +22,7 @@ class AliPayProvider extends ServiceProvider {
 
 	public function register() {
 		$this->app->single( 'AliPay', function ( $app ) {
-			return new AliPay( $app );
+			return new AliPay(  );
 		} );
 	}
 }

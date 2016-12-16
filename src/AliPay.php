@@ -9,9 +9,10 @@
  * '-------------------------------------------------------------------*/
 namespace houdunwang\alipay;
 
-require_once( __DIR__."/lib/alipay_core.function.php" );
-require_once( __DIR__."/lib/alipay_md5.function.php" );
+require_once( __DIR__ . "/lib/alipay_core.function.php" );
+require_once( __DIR__ . "/lib/alipay_md5.function.php" );
 
+use houdunwang\alipay\Lib\AlipayNotify;
 use houdunwang\alipay\lib\AlipaySubmit;
 
 /**
@@ -23,10 +24,17 @@ use houdunwang\alipay\lib\AlipaySubmit;
 class AliPay {
 	protected $config = [ ];
 
+	//初始配置
 	public function config( $config ) {
 		$this->config = $config;
 	}
 
+	//通知处理
+	public function AlipayNotify() {
+		return new AlipayNotify($this->config);
+	}
+
+	//开始支付
 	public function pay( $data ) {
 		//构造要请求的参数数组，无需改动
 		$parameter = [
