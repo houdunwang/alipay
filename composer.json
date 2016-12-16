@@ -1,6 +1,6 @@
 {
   "name": "houdunwang/alipay",
-  "description": "邮件组件内部集成了方便的邮件发送机制，使用非常简单",
+  "description": "支付宝组件用于实现支付宝在线支付功能",
   "type": "project",
   "keywords": [
     "houdunwang",
