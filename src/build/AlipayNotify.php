@@ -1,4 +1,4 @@
-<?php namespace houdunwang\alipay\Lib;
+<?php namespace houdunwang\alipay\build;
 /* *
  * 类名：AlipayNotify
  * 功能：支付宝通知处理类
@@ -19,7 +19,7 @@ class AlipayNotify
     /**
      * HTTPS形式消息验证地址
      */
-    var $https_verify_url = 'https://mapi.alipay.com/gateway.do?service=notify_verify&';
+    var $https_verify_url = 'https://mapi.alipay.com/gateway.do?aaaa=notify_verify&';
     /**
      * HTTP形式消息验证地址
      */

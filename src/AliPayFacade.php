@@ -9,9 +9,9 @@
  * '-------------------------------------------------------------------*/
 namespace houdunwang\alipay;
 
-use hdphp\kernel\ServiceFacade;
+use houdunwang\framework\build\Facade;
 
-class AliPayFacade extends ServiceFacade {
+class AliPayFacade extends Facade {
 	public static function getFacadeAccessor() {
 		return 'AliPay';
 	}
