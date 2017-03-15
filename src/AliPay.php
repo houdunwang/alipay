@@ -9,6 +9,7 @@
  * '-------------------------------------------------------------------*/
 namespace houdunwang\alipay;
 
+use houdunwang\alipay\build\Base;
 use houdunwang\config\Config;
 
 /**
@@ -21,9 +22,7 @@ class AliPay {
 
 	//更改缓存驱动
 	protected function driver() {
-		$this->link = new \houdunwang\alipay\build\Base();
-		$this->link->config( Config::get( 'alipay' ) );
-
+		$this->link = new Base();
 		return $this;
 	}
 
