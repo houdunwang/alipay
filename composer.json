@@ -1,7 +1,6 @@
 {
   "name": "houdunwang/alipay",
   "description": "支付宝组件用于实现支付宝在线支付功能",
-  "type": "project",
   "keywords": [
     "houdunwang",
     "hdphp",
