@@ -22,10 +22,10 @@
   "require": {
     "php": ">=5.4.0"
   },
-  "classmap": [
-    "houdunwang/alipay/org/aop"
-  ],
   "autoload": {
+    "classmap": [
+      "src/org/"
+    ],
     "files": [
       "src/org/lotusphp_runtime/shortcut.php"
     ],
