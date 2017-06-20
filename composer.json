@@ -26,9 +26,7 @@
     "classmap": [
       "src/org/"
     ],
-    "files": [
-      "src/org/lotusphp_runtime/shortcut.php"
-    ],
+    "files": [],
     "psr-4": {
       "houdunwang\\alipay\\": "src"
     }
