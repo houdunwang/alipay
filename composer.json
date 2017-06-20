@@ -22,8 +22,13 @@
   "require": {
     "php": ">=5.4.0"
   },
+  "classmap": [
+    "houdunwang/alipay/org/aop"
+  ],
   "autoload": {
-    "files": [],
+    "files": [
+      "src/org/lotusphp_runtime/shortcut.php"
+    ],
     "psr-4": {
       "houdunwang\\alipay\\": "src"
     }
