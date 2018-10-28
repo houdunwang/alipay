@@ -23,7 +23,7 @@
   },
   "autoload": {
     "classmap": [
-      "src/org/"
+      "src/Org/"
     ],
     "files": [],
     "psr-4": {
