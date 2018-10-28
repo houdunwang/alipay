@@ -27,7 +27,7 @@
     ],
     "files": [],
     "psr-4": {
-      "houdunwang\\alipay\\": "src"
+      "Houdunwang\\Alipay\\": "src"
     }
   }
 }

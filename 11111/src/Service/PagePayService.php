@@ -8,12 +8,12 @@
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
 
-namespace houdunwang\alipay\service;
+namespace Houdunwang\Alipay\service;
 
-use houdunwang\config\Config;
+use Houdunwang\Alipay\AliPay;
 
-require_once dirname(__FILE__).'/../org/pagepay/service/AlipayTradeService.php';
-require_once dirname(__FILE__).'/../org/pagepay/buildermodel/AlipayTradePagePayContentBuilder.php';
+require_once dirname(__FILE__) . '/../Org/pagepay/service/AlipayTradeService.php';
+require_once dirname(__FILE__) . '/../Org/pagepay/buildermodel/AlipayTradePagePayContentBuilder.php';
 
 /**
  * 桌面端支付
@@ -49,7 +49,7 @@ trait PagePayService
         $payRequestBuilder->setTotalAmount($total_amount);
         $payRequestBuilder->setOutTradeNo($out_trade_no);
 
-        $aop = new \AlipayTradeService(Config::get('alipay'));
+        $aop = new \AlipayTradeService(AliPay::getConfig('alipay'));
 
         /**
          * pagePay 电脑网站支付请求
@@ -60,7 +60,9 @@ trait PagePayService
          *
          * @return $response 支付宝返回的信息
          */
-        $response = $aop->pagePay($payRequestBuilder, Config::get('alipay.return_url'), Config::get('alipay.notify_url'));
+        $response = $aop->pagePay(
+            $payRequestBuilder, AliPay::getConfig('alipay.return_url'),
+            AliPay::getConfig('alipay.notify_url'));
         //输出表单
         var_dump($response);
     }
