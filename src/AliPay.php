@@ -10,8 +10,7 @@
 
 namespace Houdunwang\Alipay;
 
-use houdunwang\alipay\build\Base;
-use houdunwang\config\Config;
+use houdunwang\Alipay\Build\Base;
 
 /**
  * 支付宝
