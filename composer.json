@@ -4,7 +4,6 @@
   "keywords": [
     "houdunwang",
     "hdphp",
-    "后盾网",
     "后盾人",
     "向军老师",
     "alipay",
@@ -20,9 +19,7 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "php": ">=5.6.0",
-    "houdunwang/config": "~1.0",
-    "houdunwang/request": "~1.0"
+    "php": ">=7.0.0"
   },
   "autoload": {
     "classmap": [
