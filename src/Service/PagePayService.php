@@ -49,7 +49,7 @@ trait PagePayService
         $payRequestBuilder->setTotalAmount($total_amount);
         $payRequestBuilder->setOutTradeNo($out_trade_no);
 
-        $aop = new \AlipayTradeService(AliPay::getConfig('alipay'));
+        $aop = new \AlipayTradeService(AliPay::getConfig());
 
         /**
          * pagePay 电脑网站支付请求
@@ -61,8 +61,8 @@ trait PagePayService
          * @return $response 支付宝返回的信息
          */
         $response = $aop->pagePay(
-            $payRequestBuilder, AliPay::getConfig('alipay.return_url'),
-            AliPay::getConfig('alipay.notify_url'));
+            $payRequestBuilder, AliPay::getConfig('return_url'),
+            AliPay::getConfig('notify_url'));
         //输出表单
         var_dump($response);
     }

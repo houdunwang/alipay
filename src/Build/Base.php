@@ -31,7 +31,8 @@ class Base
      */
     public function signCheck()
     {
-        $alipaySevice = new \AlipayTradeService(AliPay::getConfig('alipay'));
+        dd(AliPay::getConfig());
+        $alipaySevice = new \AlipayTradeService(AliPay::getConfig());
 
         return $alipaySevice->check(Request::request());
     }

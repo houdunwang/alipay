@@ -10,7 +10,7 @@
 
 namespace Houdunwang\Alipay;
 
-use houdunwang\Alipay\Build\Base;
+use Houdunwang\Alipay\Build\Base;
 
 /**
  * 支付宝
@@ -33,9 +33,9 @@ class AliPay
     /**
      * @return array
      */
-    public static function getConfig($name)
+    public static function getConfig($name = null)
     {
-        return self::$config[$name];
+        return $name ? self::$config[$name] : self::$config;
     }
 
     public function __call($method, $params)
