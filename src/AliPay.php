@@ -8,10 +8,9 @@
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
 
-namespace houdunwang\alipay;
+namespace Houdunwang\Alipay;
 
-use houdunwang\alipay\build\Base;
-use houdunwang\config\Config;
+use Houdunwang\Alipay\Build\Base;
 
 /**
  * 支付宝
@@ -22,6 +21,22 @@ use houdunwang\config\Config;
 class AliPay
 {
     protected static $link;
+
+    //配置
+    protected static $config;
+
+    public static function config(array $config)
+    {
+        self::$config = $config;
+    }
+
+    /**
+     * @return array
+     */
+    public static function getConfig($name = null)
+    {
+        return $name ? self::$config[$name] : self::$config;
+    }
 
     public function __call($method, $params)
     {

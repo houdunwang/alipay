@@ -8,11 +8,10 @@
  * | Copyright (c) 2012-2019, www.houdunwang.com. All Rights Reserved.
  * '-------------------------------------------------------------------*/
 
-namespace houdunwang\alipay\build;
+namespace Houdunwang\Alipay\Build;
 
-use houdunwang\alipay\service\PagePayService;
-use houdunwang\config\Config;
-use houdunwang\request\Request;
+use Houdunwang\Alipay\AliPay;
+use Houdunwang\Alipay\Service\PagePayService;
 
 /**
  * 支付宝
@@ -32,8 +31,7 @@ class Base
      */
     public function signCheck()
     {
-        $alipaySevice = new \AlipayTradeService(Config::get('alipay'));
-
-        return $alipaySevice->check(Request::request());
+        $alipaySevice = new \AlipayTradeService(AliPay::getConfig());
+        return $alipaySevice->check($_REQUEST);
     }
 }
