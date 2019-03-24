@@ -25,8 +25,8 @@ trait PagePayService
 {
     /**
      * 桌面支付
-     *
      * @param $data
+     * @throws \Exception
      */
     public function PagePay($data)
     {

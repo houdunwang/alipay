@@ -34,10 +34,10 @@ $config = [
     //商户私钥，使用支付宝提供的签名生成工具创建
     'merchant_private_key' => "",
 
-    //异步通知地址
+    //异步通知地址，不要有任何GET参数
     'notify_url'           => "http://www.houdunwang.com/notifyUrl",
 
-    //同步跳转
+    //同步跳转，不要有任何GET参数
     'return_url'           => "http://www.houdunwang.com/alip/returnUrl",
 
     //编码格式
@@ -52,7 +52,8 @@ $config = [
     //支付宝公钥,查看地址：https://openhome.alipay.com/platform/keyManage.htm 对应APPID下的支付宝公钥。使用支付宝提供的签名生成工具创建
     'alipay_public_key'    => "",
 ];
-\Houdunwang\Alipay\Alipay::config($config);
+$pay = new \Houdunwang\Alipay\Alipay;
+$pay->config($config);
 ```
 
 ## 发起支付
@@ -68,7 +69,7 @@ $data = [
             //商品描述，可空
             'WIDbody'         => '定单描述',
 ];
-\Houdunwang\Alipay\Alipay::PagePay($data);
+$pay->PagePay($data);
 ```
 
 ## 通知处理
@@ -78,8 +79,10 @@ $data = [
 #### 同步通知
 
 ```
+$pay = new \Houdunwang\Alipay\Alipay;
+$pay->config($config);
 //签名验证
-if(AliPay::signCheck()){
+if($pay->signCheck()){
 	//商户订单号
 	$out_trade_no = htmlspecialchars($_GET['out_trade_no']);
 	//支付宝交易号
@@ -93,9 +96,11 @@ if(AliPay::signCheck()){
 #### 异步通知
 
 ```
-$alipaySevice = new \AlipayTradeService(Config::get('alipay'));
+$alipaySevice = new \AlipayTradeService($config);
+$pay = new \Houdunwang\Alipay\Alipay;
+$pay->config($config);
 //签名验证
-if ( ! \Houdunwang\Alipay\Alipay::signCheck()) {
+if ( ! $pay->signCheck()) {
 	return 'fail';
 }else{
 	//商户订单号
@@ -109,7 +114,7 @@ if ( ! \Houdunwang\Alipay\Alipay::signCheck()) {
         } else if ($_POST['trade_status'] == 'TRADE_SUCCESS') {
             //交易完成时的业务处理
         }
-		//必须返回以下内容给支付宝
+        //必须返回以下内容给支付宝
         return 'success';
 }
 ```
